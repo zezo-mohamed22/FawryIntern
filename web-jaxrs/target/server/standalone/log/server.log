@@ -1,0 +1,993 @@
+2024-12-16 17:29:49,716 INFO  [org.jboss.modules] (main) JBoss Modules version 2.1.5.Final
+2024-12-16 17:29:49,990 INFO  [org.jboss.msc] (main) JBoss MSC version 1.5.5.Final
+2024-12-16 17:29:49,996 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+2024-12-16 17:29:50,054 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: WildFly 33.0.2.Final (WildFly Core 25.0.2.Final) starting
+2024-12-16 17:29:50,055 DEBUG [org.jboss.as.config] (MSC service thread 1-1) Configured system properties:
+	[Standalone] = 
+	file.encoding = UTF-8
+	file.separator = /
+	java.awt.headless = true
+	java.class.path = /home/zezo/jakartaee-hello-world/target/server/jboss-modules.jar
+	java.class.version = 61.0
+	java.home = /usr/lib/jvm/java-17-openjdk-amd64
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 17.0.9+9-Ubuntu-123.04
+	java.security.manager = allow
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 17
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Private Build
+	java.vendor.url = Unknown
+	java.vendor.url.bug = Unknown
+	java.version = 17.0.9
+	java.version.date = 2023-10-17
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 17
+	java.vm.vendor = Private Build
+	java.vm.version = 17.0.9+9-Ubuntu-123.04
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = /home/zezo/jakartaee-hello-world/target/server
+	jboss.host.name = zezo-81y
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = zezo-81y
+	jboss.qualified.host.name = zezo-81y
+	jboss.server.base.dir = /home/zezo/jakartaee-hello-world/target/server/standalone
+	jboss.server.config.dir = /home/zezo/jakartaee-hello-world/target/server/standalone/configuration
+	jboss.server.data.dir = /home/zezo/jakartaee-hello-world/target/server/standalone/data
+	jboss.server.log.dir = /home/zezo/jakartaee-hello-world/target/server/standalone/log
+	jboss.server.name = zezo-81y
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/zezo/jakartaee-hello-world/target/server/standalone/tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:/home/zezo/jakartaee-hello-world/target/server/standalone/configuration/logging.properties
+	module.path = /home/zezo/jakartaee-hello-world/target/server/modules
+	native.encoding = UTF-8
+	org.jboss.boot.log.file = /home/zezo/jakartaee-hello-world/target/server/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Linux
+	os.version = 6.2.0-39-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.library.path = /usr/lib/jvm/java-17-openjdk-amd64/lib
+	sun.cpu.endian = little
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/zezo/jakartaee-hello-world/target/server/jboss-modules.jar -mp /home/zezo/jakartaee-hello-world/target/server/modules org.jboss.as.standalone -c=standalone-full.xml
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	user.country = US
+	user.dir = /home/zezo/jakartaee-hello-world
+	user.home = /home/zezo
+	user.language = en
+	user.name = zezo
+	user.timezone = Africa/Cairo
+2024-12-16 17:29:50,055 DEBUG [org.jboss.as.config] (MSC service thread 1-1) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Djboss.modules.system.pkgs=org.jboss.byteman --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-modules=java.se --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldaps=ALL-UNNAMED --add-exports=jdk.naming.dns/com.sun.jndi.dns=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED --add-modules=java.se -Djava.security.manager=allow -Djboss.home.dir=/home/zezo/jakartaee-hello-world/target/server -Djboss.server.base.dir=/home/zezo/jakartaee-hello-world/target/server/standalone -Djboss.server.log.dir=/home/zezo/jakartaee-hello-world/target/server/standalone/log -Djboss.server.config.dir=/home/zezo/jakartaee-hello-world/target/server/standalone/configuration -Dorg.jboss.boot.log.file=/home/zezo/jakartaee-hello-world/target/server/standalone/log/server.log -Dlogging.configuration=file:/home/zezo/jakartaee-hello-world/target/server/standalone/configuration/logging.properties 
+2024-12-16 17:29:50,725 INFO  [org.wildfly.security] (Controller Boot Thread) ELY00001: WildFly Elytron version 2.5.2.Final
+2024-12-16 17:29:51,028 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2024-12-16 17:29:51,035 INFO  [org.xnio] (MSC service thread 1-7) XNIO version 3.8.16.Final
+2024-12-16 17:29:51,038 INFO  [org.xnio.nio] (MSC service thread 1-7) XNIO NIO Implementation Version 3.8.16.Final
+2024-12-16 17:29:51,054 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 5.0.29.Final
+2024-12-16 17:29:51,061 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 55) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
+2024-12-16 17:29:51,064 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 58) WFLYCLINF0001: Activating Infinispan subsystem.
+2024-12-16 17:29:51,066 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 56) WFLYHEALTH0001: Activating Base Health Subsystem
+2024-12-16 17:29:51,070 INFO  [org.wildfly.extension.microprofile.config.smallrye] (ServerService Thread Pool -- 69) WFLYCONF0001: Activating MicroProfile Config Subsystem
+2024-12-16 17:29:51,071 INFO  [org.wildfly.iiop.openjdk] (ServerService Thread Pool -- 57) WFLYIIOP0001: Activating IIOP Subsystem
+2024-12-16 17:29:51,075 INFO  [org.wildfly.extension.microprofile.jwt.smallrye] (ServerService Thread Pool -- 70) WFLYJWT0001: Activating MicroProfile JWT Subsystem
+2024-12-16 17:29:51,075 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 78) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2024-12-16 17:29:51,076 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 71) WFLYNAM0001: Activating Naming Subsystem
+2024-12-16 17:29:51,077 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 59) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
+2024-12-16 17:29:51,079 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 65) WFLYJSF0007: Activated the following Jakarta Server Faces Implementations: [main]
+2024-12-16 17:29:51,081 INFO  [org.jboss.as.connector] (MSC service thread 1-8) WFLYJCA0009: Starting Jakarta Connectors Subsystem (WildFly/IronJacamar 3.0.9.Final)
+2024-12-16 17:29:51,082 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 68) WFLYMETRICS0001: Activating Base Metrics Subsystem
+2024-12-16 17:29:51,090 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 60) WFLYRS0016: RESTEasy version 6.2.10.Final
+2024-12-16 17:29:51,090 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 46) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 2.2)
+2024-12-16 17:29:51,095 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = h2
+2024-12-16 17:29:51,102 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 80) WFLYWS0002: Activating WebServices Extension
+2024-12-16 17:29:51,109 INFO  [org.jboss.as.naming] (MSC service thread 1-2) WFLYNAM0003: Starting Naming Service
+2024-12-16 17:29:51,110 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2024-12-16 17:29:51,117 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0003: Undertow 2.3.17.Final starting
+2024-12-16 17:29:51,119 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-8) WFLYELY00023: KeyStore file '/home/zezo/jakartaee-hello-world/target/server/standalone/configuration/application.keystore' does not exist. Used blank.
+2024-12-16 17:29:51,127 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-2) WFLYELY01084: KeyStore /home/zezo/jakartaee-hello-world/target/server/standalone/configuration/application.keystore not found, it will be auto-generated on first use with a self-signed certificate for host localhost
+2024-12-16 17:29:51,180 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
+2024-12-16 17:29:51,181 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
+2024-12-16 17:29:51,197 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 79) WFLYUT0014: Creating file handler for path '/home/zezo/jakartaee-hello-world/target/server/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2024-12-16 17:29:51,206 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0012: Started server default-server.
+2024-12-16 17:29:51,209 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) Queuing requests.
+2024-12-16 17:29:51,210 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0018: Host default-host starting
+2024-12-16 17:29:51,251 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2024-12-16 17:29:51,338 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2024-12-16 17:29:51,350 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2024-12-16 17:29:51,376 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory /home/zezo/jakartaee-hello-world/target/server/standalone/deployments
+2024-12-16 17:29:51,377 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2024-12-16 17:29:51,385 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-6) WFLYMSGAMQ0075: AIO wasn't located on this platform, it will fall back to using pure Java NIO. Your platform is Linux, install LibAIO to enable the AIO journal and achieve optimal performance.
+2024-12-16 17:29:51,386 INFO  [org.wildfly.iiop.openjdk] (MSC service thread 1-5) WFLYIIOP0009: CORBA ORB Service started
+2024-12-16 17:29:51,418 INFO  [org.jboss.ws.common.management] (MSC service thread 1-8) JBWS022052: Starting JBossWS 7.1.0.Final (Apache CXF 4.0.5) 
+2024-12-16 17:29:51,445 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221000: Primary message broker is starting with configuration Broker Configuration (clustered=false,journalDirectory=/home/zezo/jakartaee-hello-world/target/server/standalone/data/activemq/journal,bindingsDirectory=/home/zezo/jakartaee-hello-world/target/server/standalone/data/activemq/bindings,largeMessagesDirectory=/home/zezo/jakartaee-hello-world/target/server/standalone/data/activemq/largemessages,pagingDirectory=/home/zezo/jakartaee-hello-world/target/server/standalone/data/activemq/paging)
+2024-12-16 17:29:51,471 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221013: Using NIO Journal
+2024-12-16 17:29:51,553 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-server]. Adding protocol support for: CORE
+2024-12-16 17:29:51,555 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-amqp-protocol]. Adding protocol support for: AMQP
+2024-12-16 17:29:51,556 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-hornetq-protocol]. Adding protocol support for: HORNETQ
+2024-12-16 17:29:51,556 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-stomp-protocol]. Adding protocol support for: STOMP
+2024-12-16 17:29:51,604 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221034: Waiting indefinitely to obtain primary lock
+2024-12-16 17:29:51,604 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221035: Primary Server Obtained primary lock
+2024-12-16 17:29:51,717 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221003: Deploying ANYCAST queue jms.queue.ExpiryQueue on address jms.queue.ExpiryQueue
+2024-12-16 17:29:51,762 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221003: Deploying ANYCAST queue jms.queue.DLQ on address jms.queue.DLQ
+2024-12-16 17:29:51,779 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-8) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor
+2024-12-16 17:29:51,779 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-7) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor
+2024-12-16 17:29:51,779 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-1) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor
+2024-12-16 17:29:51,779 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-3) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor
+2024-12-16 17:29:51,863 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221007: Server is now active
+2024-12-16 17:29:51,863 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221001: Apache ActiveMQ Artemis Message Broker version 2.35.0 [default, nodeID=97aab01f-bbc2-11ef-b21f-841b77977b9c] 
+2024-12-16 17:29:51,869 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 82) WFLYMSGAMQ0002: Bound messaging object to jndi name java:/ConnectionFactory
+2024-12-16 17:29:51,876 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 83) WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2024-12-16 17:29:51,907 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-2) WFLYJCA0007: Registered connection factory java:/JmsXA
+2024-12-16 17:29:51,937 INFO  [org.apache.activemq.artemis.ra.ActiveMQRALogger] (MSC service thread 1-2) AMQ151007: Resource adaptor started
+2024-12-16 17:29:51,937 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-2) IJ020002: Deployed: file://RaActivatoractivemq-ra
+2024-12-16 17:29:51,938 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-2) WFLYJCA0002: Bound Jakarta Connectors ConnectionFactory [java:/JmsXA]
+2024-12-16 17:29:51,938 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-3) WFLYJCA0118: Binding connection factory named java:/JmsXA to alias java:jboss/DefaultJMSConnectionFactory
+2024-12-16 17:29:52,029 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2024-12-16 17:29:52,032 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2024-12-16 17:29:52,033 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2024-12-16 17:29:52,034 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly 33.0.2.Final (WildFly Core 25.0.2.Final) started in 2767ms - Started 319 of 562 services (335 services are lazy, passive or on-demand) - Server configuration file in use: standalone-full.xml - Minimum feature stability level: community
+2024-12-16 17:29:52,891 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 17:29:53,176 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 17:29:53,241 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-6) HV000001: Hibernate Validator 8.0.1.Final
+2024-12-16 17:29:53,316 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 17:29:53,472 INFO  [org.jboss.weld.Version] (MSC service thread 1-3) WELD-000900: 5.1.2 (Final)
+2024-12-16 17:29:54,210 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 2) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 17:29:54,235 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 2) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 17:29:54,269 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name : "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 17:41:15,115 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 2) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 17:41:15,168 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 56ms
+2024-12-16 17:41:15,174 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 17:41:15,261 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 17:41:15,279 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 17:41:15,500 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 88) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 17:41:15,510 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 88) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 17:41:15,526 INFO  [org.jboss.as.server] (management-handler-thread - 2) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 17:41:15,548 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 88) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 17:41:15,565 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 17ms
+2024-12-16 17:41:15,566 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 17:41:15,635 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 17:41:15,651 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 17:41:15,799 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 89) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 17:41:15,802 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 89) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 17:41:15,811 INFO  [org.jboss.as.server] (management-handler-thread - 2) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:06:26,405 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0272: Suspending server
+2024-12-16 18:06:26,411 INFO  [org.jboss.as.ejb3] (Thread-1) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2024-12-16 18:06:26,415 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2024-12-16 18:06:26,425 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 92) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:06:26,437 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-6) WFLYMSGAMQ0006: Unbound messaging object to jndi name java:/ConnectionFactory
+2024-12-16 18:06:26,459 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-5) WFLYMSGAMQ0006: Unbound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2024-12-16 18:06:26,466 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0019: Host default-host stopping
+2024-12-16 18:06:26,467 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-6) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2024-12-16 18:06:26,475 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-6) WFLYJCA0119: Unbinding connection factory named java:/JmsXA to alias java:jboss/DefaultJMSConnectionFactory
+2024-12-16 18:06:26,475 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2024-12-16 18:06:26,476 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) WFLYJCA0011: Unbound Jakarta Connectors ConnectionFactory [java:/JmsXA]
+2024-12-16 18:06:26,481 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2024-12-16 18:06:26,509 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 68ms
+2024-12-16 18:06:26,511 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0008: Undertow HTTPS listener https suspending
+2024-12-16 18:06:26,512 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2024-12-16 18:06:26,544 INFO  [org.apache.activemq.artemis.ra.ActiveMQRALogger] (ServerService Thread Pool -- 96) AMQ151003: resource adaptor stopped
+2024-12-16 18:06:26,810 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 96) AMQ221002: Apache ActiveMQ Artemis Message Broker version 2.35.0 [97aab01f-bbc2-11ef-b21f-841b77977b9c] stopped, uptime 36 minutes
+2024-12-16 18:06:26,811 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0008: Undertow HTTP listener default suspending
+2024-12-16 18:06:26,811 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2024-12-16 18:06:26,812 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0004: Undertow 2.3.17.Final stopping
+2024-12-16 18:06:26,814 INFO  [org.jboss.as] (MSC service thread 1-5) WFLYSRV0050: WildFly 33.0.2.Final (WildFly Core 25.0.2.Final) stopped in 380ms
+2024-12-16 18:10:58,578 INFO  [org.jboss.modules] (main) JBoss Modules version 2.1.5.Final
+2024-12-16 18:10:58,847 INFO  [org.jboss.msc] (main) JBoss MSC version 1.5.5.Final
+2024-12-16 18:10:58,852 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+2024-12-16 18:10:58,905 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: WildFly 33.0.2.Final (WildFly Core 25.0.2.Final) starting
+2024-12-16 18:10:58,906 DEBUG [org.jboss.as.config] (MSC service thread 1-1) Configured system properties:
+	[Standalone] = 
+	file.encoding = UTF-8
+	file.separator = /
+	java.awt.headless = true
+	java.class.path = /home/zezo/jakartaee-hello-world/target/server/jboss-modules.jar
+	java.class.version = 61.0
+	java.home = /usr/lib/jvm/java-17-openjdk-amd64
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 17.0.9+9-Ubuntu-123.04
+	java.security.manager = allow
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 17
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Private Build
+	java.vendor.url = Unknown
+	java.vendor.url.bug = Unknown
+	java.version = 17.0.9
+	java.version.date = 2023-10-17
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 17
+	java.vm.vendor = Private Build
+	java.vm.version = 17.0.9+9-Ubuntu-123.04
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = /home/zezo/jakartaee-hello-world/target/server
+	jboss.host.name = zezo-81y
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = zezo-81y
+	jboss.qualified.host.name = zezo-81y
+	jboss.server.base.dir = /home/zezo/jakartaee-hello-world/target/server/standalone
+	jboss.server.config.dir = /home/zezo/jakartaee-hello-world/target/server/standalone/configuration
+	jboss.server.data.dir = /home/zezo/jakartaee-hello-world/target/server/standalone/data
+	jboss.server.log.dir = /home/zezo/jakartaee-hello-world/target/server/standalone/log
+	jboss.server.name = zezo-81y
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/zezo/jakartaee-hello-world/target/server/standalone/tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:/home/zezo/jakartaee-hello-world/target/server/standalone/configuration/logging.properties
+	module.path = /home/zezo/jakartaee-hello-world/target/server/modules
+	native.encoding = UTF-8
+	org.jboss.boot.log.file = /home/zezo/jakartaee-hello-world/target/server/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Linux
+	os.version = 6.2.0-39-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.library.path = /usr/lib/jvm/java-17-openjdk-amd64/lib
+	sun.cpu.endian = little
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/zezo/jakartaee-hello-world/target/server/jboss-modules.jar -mp /home/zezo/jakartaee-hello-world/target/server/modules org.jboss.as.standalone -c=standalone-full.xml
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	user.country = US
+	user.dir = /home/zezo/jakartaee-hello-world
+	user.home = /home/zezo
+	user.language = en
+	user.name = zezo
+	user.timezone = Africa/Cairo
+2024-12-16 18:10:58,907 DEBUG [org.jboss.as.config] (MSC service thread 1-1) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Djboss.modules.system.pkgs=org.jboss.byteman --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-modules=java.se --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldaps=ALL-UNNAMED --add-exports=jdk.naming.dns/com.sun.jndi.dns=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED --add-modules=java.se -Djava.security.manager=allow -Djboss.home.dir=/home/zezo/jakartaee-hello-world/target/server -Djboss.server.base.dir=/home/zezo/jakartaee-hello-world/target/server/standalone -Djboss.server.log.dir=/home/zezo/jakartaee-hello-world/target/server/standalone/log -Djboss.server.config.dir=/home/zezo/jakartaee-hello-world/target/server/standalone/configuration -Dorg.jboss.boot.log.file=/home/zezo/jakartaee-hello-world/target/server/standalone/log/server.log -Dlogging.configuration=file:/home/zezo/jakartaee-hello-world/target/server/standalone/configuration/logging.properties 
+2024-12-16 18:10:59,491 INFO  [org.wildfly.security] (Controller Boot Thread) ELY00001: WildFly Elytron version 2.5.2.Final
+2024-12-16 18:10:59,797 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2024-12-16 18:10:59,806 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.8.16.Final
+2024-12-16 18:10:59,810 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.8.16.Final
+2024-12-16 18:10:59,825 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 56) WFLYHEALTH0001: Activating Base Health Subsystem
+2024-12-16 18:10:59,825 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 55) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
+2024-12-16 18:10:59,827 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 58) WFLYCLINF0001: Activating Infinispan subsystem.
+2024-12-16 18:10:59,838 INFO  [org.wildfly.extension.microprofile.config.smallrye] (ServerService Thread Pool -- 69) WFLYCONF0001: Activating MicroProfile Config Subsystem
+2024-12-16 18:10:59,840 INFO  [org.wildfly.iiop.openjdk] (ServerService Thread Pool -- 57) WFLYIIOP0001: Activating IIOP Subsystem
+2024-12-16 18:10:59,840 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 71) WFLYNAM0001: Activating Naming Subsystem
+2024-12-16 18:10:59,843 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 65) WFLYJSF0007: Activated the following Jakarta Server Faces Implementations: [main]
+2024-12-16 18:10:59,843 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 78) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2024-12-16 18:10:59,847 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting Jakarta Connectors Subsystem (WildFly/IronJacamar 3.0.9.Final)
+2024-12-16 18:10:59,848 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 68) WFLYMETRICS0001: Activating Base Metrics Subsystem
+2024-12-16 18:10:59,851 INFO  [org.wildfly.extension.microprofile.jwt.smallrye] (ServerService Thread Pool -- 70) WFLYJWT0001: Activating MicroProfile JWT Subsystem
+2024-12-16 18:10:59,851 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 60) WFLYRS0016: RESTEasy version 6.2.10.Final
+2024-12-16 18:10:59,856 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 80) WFLYWS0002: Activating WebServices Extension
+2024-12-16 18:10:59,860 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 59) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
+2024-12-16 18:10:59,865 INFO  [org.jboss.as.naming] (MSC service thread 1-7) WFLYNAM0003: Starting Naming Service
+2024-12-16 18:10:59,870 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 46) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 2.2)
+2024-12-16 18:10:59,873 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2024-12-16 18:10:59,874 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = h2
+2024-12-16 18:10:59,879 INFO  [org.jboss.remoting] (MSC service thread 1-2) JBoss Remoting version 5.0.29.Final
+2024-12-16 18:10:59,892 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-3) WFLYELY00023: KeyStore file '/home/zezo/jakartaee-hello-world/target/server/standalone/configuration/application.keystore' does not exist. Used blank.
+2024-12-16 18:10:59,920 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0003: Undertow 2.3.17.Final starting
+2024-12-16 18:10:59,929 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-5) WFLYELY01084: KeyStore /home/zezo/jakartaee-hello-world/target/server/standalone/configuration/application.keystore not found, it will be auto-generated on first use with a self-signed certificate for host localhost
+2024-12-16 18:10:59,962 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 79) WFLYUT0014: Creating file handler for path '/home/zezo/jakartaee-hello-world/target/server/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2024-12-16 18:10:59,962 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
+2024-12-16 18:10:59,963 INFO  [org.jboss.as.ejb3] (MSC service thread 1-6) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
+2024-12-16 18:10:59,969 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0012: Started server default-server.
+2024-12-16 18:10:59,971 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) Queuing requests.
+2024-12-16 18:10:59,972 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0018: Host default-host starting
+2024-12-16 18:10:59,999 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2024-12-16 18:11:00,098 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2024-12-16 18:11:00,120 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2024-12-16 18:11:00,151 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:11:00,154 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory /home/zezo/jakartaee-hello-world/target/server/standalone/deployments
+2024-12-16 18:11:00,156 INFO  [org.wildfly.iiop.openjdk] (MSC service thread 1-5) WFLYIIOP0009: CORBA ORB Service started
+2024-12-16 18:11:00,166 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-6) WFLYMSGAMQ0075: AIO wasn't located on this platform, it will fall back to using pure Java NIO. Your platform is Linux, install LibAIO to enable the AIO journal and achieve optimal performance.
+2024-12-16 18:11:00,166 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2024-12-16 18:11:00,206 INFO  [org.jboss.ws.common.management] (MSC service thread 1-8) JBWS022052: Starting JBossWS 7.1.0.Final (Apache CXF 4.0.5) 
+2024-12-16 18:11:00,250 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221000: Primary message broker is starting with configuration Broker Configuration (clustered=false,journalDirectory=/home/zezo/jakartaee-hello-world/target/server/standalone/data/activemq/journal,bindingsDirectory=/home/zezo/jakartaee-hello-world/target/server/standalone/data/activemq/bindings,largeMessagesDirectory=/home/zezo/jakartaee-hello-world/target/server/standalone/data/activemq/largemessages,pagingDirectory=/home/zezo/jakartaee-hello-world/target/server/standalone/data/activemq/paging)
+2024-12-16 18:11:00,293 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221013: Using NIO Journal
+2024-12-16 18:11:00,366 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-server]. Adding protocol support for: CORE
+2024-12-16 18:11:00,367 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-amqp-protocol]. Adding protocol support for: AMQP
+2024-12-16 18:11:00,367 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-hornetq-protocol]. Adding protocol support for: HORNETQ
+2024-12-16 18:11:00,367 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-stomp-protocol]. Adding protocol support for: STOMP
+2024-12-16 18:11:00,409 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221034: Waiting indefinitely to obtain primary lock
+2024-12-16 18:11:00,409 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221035: Primary Server Obtained primary lock
+2024-12-16 18:11:00,574 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:11:00,600 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221003: Deploying ANYCAST queue jms.queue.ExpiryQueue on address jms.queue.ExpiryQueue
+2024-12-16 18:11:00,603 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221003: Deploying ANYCAST queue jms.queue.DLQ on address jms.queue.DLQ
+2024-12-16 18:11:00,605 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-3) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor
+2024-12-16 18:11:00,605 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-4) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor
+2024-12-16 18:11:00,605 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-2) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor
+2024-12-16 18:11:00,605 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-5) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor
+2024-12-16 18:11:00,660 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-7) HV000001: Hibernate Validator 8.0.1.Final
+2024-12-16 18:11:00,749 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221007: Server is now active
+2024-12-16 18:11:00,749 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221001: Apache ActiveMQ Artemis Message Broker version 2.35.0 [default, nodeID=97aab01f-bbc2-11ef-b21f-841b77977b9c] 
+2024-12-16 18:11:00,755 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 83) WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2024-12-16 18:11:00,760 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 85) WFLYMSGAMQ0002: Bound messaging object to jndi name java:/ConnectionFactory
+2024-12-16 18:11:00,778 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:11:00,800 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-2) WFLYJCA0007: Registered connection factory java:/JmsXA
+2024-12-16 18:11:00,826 INFO  [org.apache.activemq.artemis.ra.ActiveMQRALogger] (MSC service thread 1-2) AMQ151007: Resource adaptor started
+2024-12-16 18:11:00,826 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-2) IJ020002: Deployed: file://RaActivatoractivemq-ra
+2024-12-16 18:11:00,827 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-6) WFLYJCA0002: Bound Jakarta Connectors ConnectionFactory [java:/JmsXA]
+2024-12-16 18:11:00,827 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) WFLYJCA0118: Binding connection factory named java:/JmsXA to alias java:jboss/DefaultJMSConnectionFactory
+2024-12-16 18:11:00,988 INFO  [org.jboss.weld.Version] (MSC service thread 1-3) WELD-000900: 5.1.2 (Final)
+2024-12-16 18:11:01,623 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 85) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:11:01,649 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 85) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:11:01,684 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name : "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:11:01,703 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2024-12-16 18:11:01,706 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2024-12-16 18:11:01,706 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2024-12-16 18:11:01,707 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly 33.0.2.Final (WildFly Core 25.0.2.Final) started in 3611ms - Started 442 of 671 services (340 services are lazy, passive or on-demand) - Server configuration file in use: standalone-full.xml - Minimum feature stability level: community
+2024-12-16 18:11:02,196 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 85) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:11:02,225 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 31ms
+2024-12-16 18:11:02,228 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:11:02,278 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:11:02,294 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:11:02,500 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 13) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:11:02,504 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 13) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:11:02,526 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0016: Replaced deployment "jakartaee-hello-world-0.1-SNAPSHOT.war" with deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:15:27,935 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 13) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:15:27,940 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 5ms
+2024-12-16 18:15:27,941 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:15:27,988 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:15:28,002 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:15:28,128 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 89) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:15:28,131 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 89) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:15:28,141 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:15:28,159 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 89) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:15:28,165 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 6ms
+2024-12-16 18:15:28,166 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:15:28,195 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:15:28,206 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:15:28,414 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 89) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:15:28,420 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 89) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:15:28,433 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:18:38,137 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 89) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:18:38,141 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 4ms
+2024-12-16 18:18:38,142 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:18:38,171 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:18:38,180 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:18:38,365 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 92) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:18:38,370 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 92) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:18:38,387 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:18:38,408 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 92) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:18:38,416 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 10ms
+2024-12-16 18:18:38,417 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:18:38,460 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:18:38,474 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:18:38,636 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 89) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:18:38,639 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 89) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:18:38,646 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:27:40,193 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 89) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:27:40,204 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 11ms
+2024-12-16 18:27:40,204 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:27:40,269 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:27:40,288 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:27:40,474 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 97) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:27:40,477 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 97) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:27:40,485 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:27:40,511 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 97) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:27:40,518 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 14ms
+2024-12-16 18:27:40,521 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:27:40,551 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:27:40,559 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:27:40,707 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 95) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:27:40,711 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 95) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:27:40,724 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:32:24,453 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 95) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:32:24,467 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 16ms
+2024-12-16 18:32:24,469 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:32:24,525 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:32:24,535 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:32:24,699 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 101) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:32:24,715 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 101) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:32:24,728 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:32:24,744 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 101) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:32:24,750 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 6ms
+2024-12-16 18:32:24,751 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:32:24,831 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:32:24,846 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:32:24,975 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 95) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:32:24,978 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 95) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:32:24,985 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:38:38,987 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 95) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:38:39,000 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 14ms
+2024-12-16 18:38:39,002 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:38:39,054 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:38:39,063 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:38:39,228 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 95) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:38:39,231 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 95) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:38:39,241 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:38:39,249 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 95) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:38:39,253 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 4ms
+2024-12-16 18:38:39,253 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:38:39,287 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:38:39,295 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:38:39,373 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 102) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:38:39,376 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 102) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:38:39,383 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:39:18,101 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 102) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:39:18,111 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 9ms
+2024-12-16 18:39:18,112 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:39:18,179 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:39:18,191 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:39:18,290 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 107) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:39:18,292 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 107) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:39:18,301 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:39:18,310 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 107) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:39:18,314 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 4ms
+2024-12-16 18:39:18,314 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:39:18,334 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:39:18,340 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:39:18,433 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 107) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:39:18,437 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 107) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:39:18,460 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:40:31,222 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 107) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:40:31,227 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 5ms
+2024-12-16 18:40:31,228 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:40:31,270 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:40:31,277 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:40:31,434 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 111) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:40:31,437 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 111) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:40:31,444 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:40:31,453 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 107) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:40:31,457 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 4ms
+2024-12-16 18:40:31,457 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:40:31,478 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:40:31,484 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:40:31,619 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 112) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:40:31,624 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 112) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:40:31,634 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:43:06,557 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 112) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:43:06,562 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 6ms
+2024-12-16 18:43:06,563 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:43:06,609 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:43:06,617 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:43:06,761 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 114) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:43:06,765 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 114) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:43:06,776 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:43:06,796 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 112) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:43:06,825 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 29ms
+2024-12-16 18:43:06,826 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:43:06,857 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:43:06,868 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:43:06,969 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 113) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:43:06,973 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 113) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:43:06,982 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:44:54,341 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 113) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:44:54,346 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 5ms
+2024-12-16 18:44:54,351 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:44:54,377 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:44:54,382 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:44:54,476 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 117) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:44:54,480 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 117) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:44:54,487 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:44:54,495 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 117) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:44:54,500 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 4ms
+2024-12-16 18:44:54,500 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:44:54,520 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:44:54,525 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:44:54,584 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 118) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:44:54,586 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 118) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:44:54,593 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:45:15,685 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 118) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:45:15,697 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 12ms
+2024-12-16 18:45:15,698 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:45:15,743 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:45:15,754 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:45:15,869 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 121) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:45:15,872 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 121) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:45:15,881 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:45:15,889 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 121) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:45:15,893 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 3ms
+2024-12-16 18:45:15,893 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:45:15,915 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:45:15,920 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:45:15,989 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 120) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:45:15,992 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 120) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:45:15,998 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:45:40,118 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 123) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:45:40,124 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 6ms
+2024-12-16 18:45:40,125 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:45:40,164 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:45:40,172 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:45:40,253 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 125) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:45:40,256 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 125) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:45:40,264 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:45:40,272 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 125) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:45:40,276 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 3ms
+2024-12-16 18:45:40,276 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:45:40,297 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:45:40,304 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:45:40,379 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 124) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:45:40,381 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 124) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:45:40,387 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:46:58,532 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 124) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:46:58,536 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 4ms
+2024-12-16 18:46:58,537 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:46:58,584 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:46:58,593 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:46:58,692 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 129) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:46:58,695 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 129) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:46:58,702 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:46:58,711 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 129) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:46:58,715 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 3ms
+2024-12-16 18:46:58,715 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:46:58,738 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:46:58,743 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:46:58,808 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 129) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:46:58,810 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 129) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:46:58,817 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:48:06,578 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 129) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:48:06,581 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 2ms
+2024-12-16 18:48:06,581 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:48:06,604 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:48:06,612 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:48:06,737 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 132) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:48:06,742 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 132) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:48:06,753 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:48:06,770 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 132) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:48:06,787 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 19ms
+2024-12-16 18:48:06,788 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:48:06,828 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:48:06,838 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:48:06,942 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 131) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:48:06,946 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 131) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:48:06,958 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:48:46,071 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 131) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:48:46,082 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 11ms
+2024-12-16 18:48:46,083 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:48:46,132 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:48:46,143 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:48:46,220 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 133) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:48:46,222 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 133) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:48:46,231 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:48:46,241 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 133) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:48:46,244 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 3ms
+2024-12-16 18:48:46,245 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:48:46,272 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:48:46,280 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:48:46,362 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 131) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:48:46,366 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 131) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:48:46,383 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:48:52,277 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 131) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:48:52,283 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 5ms
+2024-12-16 18:48:52,283 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:48:52,305 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:48:52,310 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:48:52,379 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 135) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:48:52,381 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 135) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:48:52,390 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:48:52,399 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 135) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:48:52,405 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 6ms
+2024-12-16 18:48:52,405 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:48:52,429 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:48:52,434 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:48:52,519 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 134) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:48:52,521 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 134) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:48:52,528 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:50:00,525 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 134) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:50:00,536 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 12ms
+2024-12-16 18:50:00,537 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:50:00,582 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:50:00,591 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:50:00,738 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 134) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:50:00,743 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 134) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:50:00,753 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:50:00,769 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 134) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:50:00,774 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 7ms
+2024-12-16 18:50:00,775 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:50:00,794 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:50:00,799 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:50:00,855 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 134) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:50:00,856 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 134) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:50:00,862 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:50:29,653 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 134) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:50:29,659 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 6ms
+2024-12-16 18:50:29,660 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:50:29,693 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:50:29,702 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:50:29,824 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 134) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:50:29,826 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 134) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:50:29,839 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:50:29,851 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 134) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:50:29,854 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 3ms
+2024-12-16 18:50:29,855 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:50:29,881 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:50:29,888 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:50:29,984 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 143) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:50:29,986 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 143) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:50:29,992 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:51:09,046 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 143) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:51:09,050 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 4ms
+2024-12-16 18:51:09,056 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:51:09,088 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:51:09,095 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:51:09,154 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 146) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:51:09,156 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 146) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:51:09,163 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:51:09,170 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 146) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:51:09,174 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 4ms
+2024-12-16 18:51:09,177 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:51:09,204 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:51:09,211 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:51:09,287 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 147) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:51:09,290 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 147) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:51:09,300 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:52:19,836 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 147) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:52:19,842 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 5ms
+2024-12-16 18:52:19,842 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:52:19,882 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:52:19,902 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:52:20,028 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 149) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:52:20,032 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 149) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:52:20,044 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
+2024-12-16 18:52:20,050 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 148) WFLYUT0022: Unregistered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' from server 'default-server'
+2024-12-16 18:52:20,054 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment jakartaee-hello-world-0.1-SNAPSHOT.war (runtime-name: jakartaee-hello-world-0.1-SNAPSHOT.war) in 3ms
+2024-12-16 18:52:20,055 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "jakartaee-hello-world-0.1-SNAPSHOT.war" (runtime-name: "jakartaee-hello-world-0.1-SNAPSHOT.war")
+2024-12-16 18:52:20,072 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment jakartaee-hello-world-0.1-SNAPSHOT.war
+2024-12-16 18:52:20,077 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'storeManager' in deployment unit 'deployment "jakartaee-hello-world-0.1-SNAPSHOT.war"' are as follows:
+
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager!Modules.storeManager
+	java:module/storeManager!Modules.storeManager
+	java:global/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:app/jakartaee-hello-world-0.1-SNAPSHOT/storeManager
+	java:module/storeManager
+
+2024-12-16 18:52:20,139 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 150) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class org.eclipse.jakarta.hello.HelloApplication
+2024-12-16 18:52:20,142 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 150) WFLYUT0021: Registered web context: '/jakartaee-hello-world-0.1-SNAPSHOT' for server 'default-server'
+2024-12-16 18:52:20,148 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0013: Redeployed "jakartaee-hello-world-0.1-SNAPSHOT.war"
